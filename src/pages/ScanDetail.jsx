@@ -120,7 +120,7 @@ const ScanDetail = () => {
           <span className="text-gray-400 cursor-pointer text-lg">×</span>
         </div>
 
-        <div className="grid grid-cols-3">
+        <div className="grid lg:grid-cols-3 grid-cols-1 ">
 
           {/* LEFT CONSOLE */}
           <div className="col-span-2 border-r border-gray-300 dark:border-gray-700">

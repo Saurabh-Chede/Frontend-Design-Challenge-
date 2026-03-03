@@ -10,7 +10,9 @@ import {
   Search,
   SearchAlert,
   X,
+  Ban
 } from "lucide-react";
+
 
 const Dashboard = () => {
   const [rows, setRows] = useState(mockData);
@@ -87,7 +89,7 @@ const Dashboard = () => {
   return (
     <div className="bg-white dark:bg-gray-900 p-6 min-h-screen transition-colors duration-300">
       <div className="flex text-sm text-gray-600 dark:text-gray-400 mb-6">
-        <div className="flex gap-6 justify-between w-full">
+        <div className="flex flex-col md:flex-row gap-6 justify-between w-full">
           <p>
             <span className="font-semibold">Org:</span> Project X
           </p>
@@ -102,13 +104,13 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-6 mb-6">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
         {[
           {
             title: "Critical Severity",
             value: 86,
             change: "+2% increase than yesterday",
-            icon: <ShieldX size={18} />,
+            icon: <Ban size={18} />,
             iconBg: "bg-pink-100 dark:bg-pink-900/30",
             iconColor: "text-pink-600 dark:text-pink-400",
             changeColor: "text-pink-600",
@@ -126,7 +128,7 @@ const Dashboard = () => {
             title: "Medium Severity",
             value: 26,
             change: "+0.9% decrease than yesterday",
-            icon: <AlertCircle size={18} />,
+            icon: <AlertTriangle size={18} />,
             iconBg: "bg-yellow-100 dark:bg-yellow-900/30",
             iconColor: "text-yellow-600 dark:text-yellow-400",
             changeColor: "text-green-600",
@@ -204,7 +206,7 @@ const Dashboard = () => {
               onClick={() => setShowModal(true)}
               className="flex items-center gap-2 px-4 py-2 bg-teal-600 text-white rounded-lg text-sm"
             >
-              <Plus size={16} /> New scan
+              <Plus size={16} /> <span className="hidden md:block">New scan</span>
             </button>
           </div>
         </div>
