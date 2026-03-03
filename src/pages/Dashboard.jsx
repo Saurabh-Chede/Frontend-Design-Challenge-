@@ -172,7 +172,7 @@ const Dashboard = () => {
             <input
               type="text"
               placeholder="Search scans by name or type..."
-              className="bg-transparent outline-none w-full text-sm text-gray-800 dark:text-gray-200"
+              className="bg-transparent hidden md:block outline-none w-full text-sm text-gray-800 dark:text-gray-200"
               value={searchTerm}
               onChange={(e) => {
                 setSearchTerm(e.target.value);
@@ -190,7 +190,7 @@ const Dashboard = () => {
                   setStatusFilter(e.target.value);
                   setCurrentPage(1);
                 }}
-                className="bg-gray-100 dark:bg-gray-700 rounded px-3 py-2 outline-0 text-sm dark:text-gray-200"
+                className="bg-gray-100 dark:bg-gray-700 rounded md:px-3 px-1  py-2 outline-0 text-sm dark:text-gray-200"
               >
                 <option>All</option>
                 <option>Completed</option>
@@ -200,11 +200,11 @@ const Dashboard = () => {
             </div>
 
             <button className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm dark:text-gray-200">
-              <Columns size={16} /> Column
+              <Columns size={16} /> <span className="hidden md:block">Column</span>
             </button>
             <button
               onClick={() => setShowModal(true)}
-              className="flex items-center gap-2 px-4 py-2 bg-teal-600 text-white rounded-lg text-sm"
+              className="flex items-center gap-2 md:px-4 px-2  py-2 bg-teal-600 text-white rounded-lg text-sm"
             >
               <Plus size={16} /> <span className="hidden md:block">New scan</span>
             </button>
@@ -213,7 +213,7 @@ const Dashboard = () => {
       </div>
 
       {/* TABLE */}
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden">
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-x-auto">
         <table className="w-full text-sm">
           <thead className="bg-gray-50 dark:bg-gray-700 text-gray-500 dark:text-gray-300">
             <tr>

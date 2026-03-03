@@ -52,7 +52,7 @@ const ScanDetail = () => {
             <p className="text-xs text-gray-300 mt-1">In Progress</p>
           </div>
 
-          <div className="flex-1 flex flex-col">
+          <div className="flex-1 md:flex flex-col hidden">
 
             <div className="relative flex justify-between items-center mb-8">
               <div className="absolute top-6 left-0 right-0 h-0.5 bg-gray-200 dark:bg-gray-600"></div>
@@ -220,12 +220,12 @@ const ScanDetail = () => {
 
       {/* BOTTOM STATUS */}
       <div className="mt-4 text-xs text-gray-500 dark:text-gray-400 flex justify-between border-t border-t-gray-300 dark:border-gray-700 pt-4">
-        <div className="flex gap-6">
+        <div className="flex flex-col md:flex-row gap-6">
           <p>Sub-Agents: 0</p>
           <p>Parallel Executions: 2</p>
           <p>Operations: 1</p>
         </div>
-        <div className="flex gap-6">
+        <div className="flex flex-col md:flex-row gap-6">
           <p className="text-red-500">Critical: 0</p>
           <p className="text-orange-500">High: 0</p>
           <p className="text-yellow-500">Medium: 0</p>

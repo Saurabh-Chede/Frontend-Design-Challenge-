@@ -152,12 +152,11 @@ const Auth = () => {
           {/* Social Buttons */}
           <div className="mt-6 flex justify-between gap-3">
             <button className="flex-1 flex items-center justify-center gap-2 bg-black text-white py-2 rounded-full hover:opacity-90 transition">
-              <FaApple size={18} />
-              Apple
+              <FaApple size={20} />
             </button>
 
             <button className="flex-1 flex items-center justify-center gap-2 bg-white border py-2 rounded-full hover:bg-gray-50 transition">
-              <svg width="18" height="18" viewBox="0 0 48 48">
+              <svg width="20" height="20" viewBox="0 0 48 48">
                 {" "}
                 <path
                   fill="#EA4335"
@@ -176,12 +175,10 @@ const Auth = () => {
                   d="M24 48c6.48 0 11.93-2.13 15.91-5.79l-7.18-5.59c-2 1.34-4.56 2.13-8.73 2.13-6.12 0-11.32-3.83-13.25-9.2l-8.06 6.26C6.73 42.52 14.64 48 24 48z"
                 />{" "}
               </svg>
-              Google
             </button>
 
             <button className="flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white py-2 rounded-full hover:opacity-90 transition">
-              <SiMeta size={18} />
-              Meta
+              <SiMeta size={20} />
             </button>
           </div>
         </div>
