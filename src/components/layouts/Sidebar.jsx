@@ -9,16 +9,13 @@ import { CiCircleInfo } from "react-icons/ci";
 
 const Sidebar = () => {
   const linkStyle = ({ isActive }) =>
-    `flex items-center gap-3 px-4 py-2 rounded-full transition-all ${
-      isActive
-        ? "bg-teal-100/30 text-teal-600 dark:bg-teal-600/20 dark:text-teal-400"
-        : "text-gray-700 dark:text-gray-300 hover:bg-teal-100/20 dark:hover:bg-gray-700"
+    `flex items-center gap-3 px-4 py-2 rounded-full transition-all ${isActive
+      ? "bg-teal-100/30 text-teal-600 dark:bg-teal-600/20 dark:text-teal-400"
+      : "text-gray-700 dark:text-gray-300 hover:bg-teal-100/20 dark:hover:bg-gray-700"
     }`;
 
   return (
-    <aside className="relative w-64 min-h-screen bg-white dark:bg-gray-900 border-r border-r-gray-200 dark:border-gray-700 p-5">
-      
-      {/* Logo */}
+    <aside className="relative w-64 min-h-screen bg-white dark:bg-gray-950 border-r border-r-gray-200 dark:border-gray-700 p-5">
       <div className="mb-10 text-2xl font-bold text-teal-600 flex gap-2 items-center">
         <div className="w-10 flex justify-center items-center relative h-10 rounded-full bg-teal-600">
           <div className="w-4 h-4 rounded-full bg-white"></div>
@@ -66,7 +63,6 @@ const Sidebar = () => {
         </NavLink>
       </nav>
 
-      {/* Footer */}
       <div className="absolute bottom-6 left-5 text-sm text-gray-600 dark:text-gray-400">
         Security Lead
       </div>

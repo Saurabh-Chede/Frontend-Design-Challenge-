@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Web App Servers",
+    "type": "Greybox",
+    "status": "Completed",
+    "progress": 100,
+    "vulnerabilities": [5, 12, 23, 18],
+    "lastScan": "4d ago"
+  },
+  {
+    "name": "Payment Gateway",
+    "type": "Greybox",
+    "status": "Completed",
+    "progress": 100,
+    "vulnerabilities": [8, 15, 12, 9],
+    "lastScan": "3d ago"
+  },
+  {
+    "name": "Admin Portal",
+    "type": "Greybox",
+    "status": "Scheduled",
+    "progress": 75,
+    "vulnerabilities": [3, 10, 6],
+    "lastScan": "2d ago"
+  },
+  {
+    "name": "Internal APIs",
+    "type": "Greybox",
+    "status": "Scheduled",
+    "progress": 60,
+    "vulnerabilities": [6, 14],
+    "lastScan": "2d ago"
+  },
+  {
+    "name": "IoT Devices",
+    "type": "Blackbox",
+    "status": "Failed",
+    "progress": 10,
+    "vulnerabilities": [2, 4, 8, 1],
+    "lastScan": "3d ago"
+  },
+  {
+    "name": "Temp Data",
+    "type": "Blackbox",
+    "status": "Failed",
+    "progress": 15,
+    "vulnerabilities": [1, 2, 5],
+    "lastScan": "3d ago"
+  },
+  {
+    "name": "Production Server",
+    "type": "Greybox",
+    "status": "Completed",
+    "progress": 100,
+    "vulnerabilities": [10, 18, 20, 11],
+    "lastScan": "1d ago"
+  },
+  {
+    "name": "Staging Server",
+    "type": "Greybox",
+    "status": "Completed",
+    "progress": 100,
+    "vulnerabilities": [4, 8, 6, 3],
+    "lastScan": "1d ago"
+  },
+  {
+    "name": "Mobile Backend",
+    "type": "Blackbox",
+    "status": "Scheduled",
+    "progress": 40,
+    "vulnerabilities": [3, 5],
+    "lastScan": "5h ago"
+  },
+  {
+    "name": "Cloud Storage",
+    "type": "Blackbox",
+    "status": "Failed",
+    "progress": 20,
+    "vulnerabilities": [7, 9, 2],
+    "lastScan": "6h ago"
+  },
+  {
+    "name": "DNS Servers",
+    "type": "Greybox",
+    "status": "Completed",
+    "progress": 100,
+    "vulnerabilities": [6, 11, 9, 4],
+    "lastScan": "7h ago"
+  }
+]
