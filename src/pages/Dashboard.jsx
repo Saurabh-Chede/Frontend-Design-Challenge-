@@ -102,9 +102,12 @@ const Dashboard = () => {
   ];
 
   const statusStyle = {
-    Completed: "bg-green-100 text-green-700",
-    Scheduled: "bg-gray-200 text-gray-700",
-    Failed: "bg-red-100 text-red-700",
+    Completed:
+      "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400",
+    Scheduled:
+      "bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300",
+    Failed:
+      "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400",
   };
 
   const vulnColors = [
@@ -115,16 +118,13 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="bg-white p-6 min-h-screen">
+    <div className="bg-white dark:bg-gray-900 p-6 min-h-screen transition-colors duration-300">
+      
       {/* TOP INFO BAR */}
-      <div className="flex text-sm text-gray-600 mb-6">
+      <div className="flex text-sm text-gray-600 dark:text-gray-400 mb-6">
         <div className="flex gap-6 justify-between w-full">
-          <p>
-            <span className="font-semibold">Org:</span> Project X
-          </p>
-          <p>
-            <span className="font-semibold">Owner:</span> Nammagiri
-          </p>
+          <p><span className="font-semibold">Org:</span> Project X</p>
+          <p><span className="font-semibold">Owner:</span> Nammagiri</p>
           <p>Total Scans: 100</p>
           <p>Scheduled: 1000</p>
           <p>Rescans: 100</p>
@@ -141,8 +141,8 @@ const Dashboard = () => {
             value: 86,
             change: "+2% increase than yesterday",
             icon: <ShieldX size={18} />,
-            iconBg: "bg-pink-100",
-            iconColor: "text-pink-600",
+            iconBg: "bg-pink-100 dark:bg-pink-900/30",
+            iconColor: "text-pink-600 dark:text-pink-400",
             changeColor: "text-pink-600",
           },
           {
@@ -150,8 +150,8 @@ const Dashboard = () => {
             value: 16,
             change: "+0.9% increase than yesterday",
             icon: <AlertTriangle size={18} />,
-            iconBg: "bg-orange-100",
-            iconColor: "text-orange-600",
+            iconBg: "bg-orange-100 dark:bg-orange-900/30",
+            iconColor: "text-orange-600 dark:text-orange-400",
             changeColor: "text-pink-600",
           },
           {
@@ -159,8 +159,8 @@ const Dashboard = () => {
             value: 26,
             change: "+0.9% decrease than yesterday",
             icon: <AlertCircle size={18} />,
-            iconBg: "bg-yellow-100",
-            iconColor: "text-yellow-600",
+            iconBg: "bg-yellow-100 dark:bg-yellow-900/30",
+            iconColor: "text-yellow-600 dark:text-yellow-400",
             changeColor: "text-green-600",
           },
           {
@@ -168,18 +168,22 @@ const Dashboard = () => {
             value: 16,
             change: "+0.9% increase than yesterday",
             icon: <SearchAlert size={18} />,
-            iconBg: "bg-blue-100",
-            iconColor: "text-blue-600",
+            iconBg: "bg-blue-100 dark:bg-blue-900/30",
+            iconColor: "text-blue-600 dark:text-blue-400",
             changeColor: "text-pink-600",
           },
         ].map((item, i) => (
           <div
             key={i}
-            className="bg-white p-5 rounded-xl shadow-sm flex justify-between items-start"
+            className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-sm flex justify-between items-start"
           >
             <div>
-              <p className="text-gray-500 text-sm">{item.title}</p>
-              <h2 className="text-3xl font-bold mt-2">{item.value}</h2>
+              <p className="text-gray-500 dark:text-gray-400 text-sm">
+                {item.title}
+              </p>
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mt-2">
+                {item.value}
+              </h2>
               <p className={`text-xs mt-2 ${item.changeColor}`}>
                 {item.change}
               </p>
@@ -193,22 +197,22 @@ const Dashboard = () => {
       </div>
 
       {/* SEARCH + ACTIONS */}
-      <div className="bg-white p-4 rounded-xl shadow-sm mb-4">
+      <div className="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm mb-4">
         <div className="flex justify-between items-center">
-          <div className="flex items-center bg-gray-100 rounded-lg px-3 py-2 w-1/2">
-            <Search size={16} className="text-gray-500 mr-2" />
+          <div className="flex items-center bg-gray-100 dark:bg-gray-700 rounded-lg px-3 py-2 w-1/2">
+            <Search size={16} className="text-gray-500 dark:text-gray-300 mr-2" />
             <input
               type="text"
               placeholder="Search scans by name or type..."
-              className="bg-transparent outline-none w-full text-sm"
+              className="bg-transparent outline-none w-full text-sm text-gray-800 dark:text-gray-200"
             />
           </div>
 
           <div className="flex gap-3">
-            <button className="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-lg text-sm">
+            <button className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm dark:text-gray-200">
               <Filter size={16} /> Filter
             </button>
-            <button className="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-lg text-sm">
+            <button className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm dark:text-gray-200">
               <Columns size={16} /> Column
             </button>
             <button className="flex items-center gap-2 px-4 py-2 bg-teal-600 text-white rounded-lg text-sm">
@@ -219,9 +223,9 @@ const Dashboard = () => {
       </div>
 
       {/* TABLE */}
-      <div className="bg-white rounded-xl shadow-sm overflow-hidden">
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden">
         <table className="w-full text-sm">
-          <thead className="bg-gray-50 text-gray-500">
+          <thead className="bg-gray-50 dark:bg-gray-700 text-gray-500 dark:text-gray-300">
             <tr>
               <th className="text-left p-4">Scan Name</th>
               <th className="text-left p-4">Type</th>
@@ -236,10 +240,12 @@ const Dashboard = () => {
             {rows.map((row, index) => (
               <tr
                 key={index}
-                className="border-t border-t-gray-300 hover:bg-gray-50"
+                className="border-t border-t-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
               >
-                <td className="p-4 font-medium">{row.name}</td>
-                <td className="p-4">{row.type}</td>
+                <td className="p-4 font-medium text-gray-900 dark:text-gray-100">
+                  {row.name}
+                </td>
+                <td className="p-4 dark:text-gray-300">{row.type}</td>
 
                 <td className="p-4">
                   <span
@@ -251,13 +257,15 @@ const Dashboard = () => {
 
                 <td className="p-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-32 h-2 bg-gray-200 rounded-full">
+                    <div className="w-32 h-2 bg-gray-200 dark:bg-gray-600 rounded-full">
                       <div
                         className="h-2 bg-teal-600 rounded-full"
                         style={{ width: `${row.progress}%` }}
                       ></div>
                     </div>
-                    <span>{row.progress}%</span>
+                    <span className="dark:text-gray-300">
+                      {row.progress}%
+                    </span>
                   </div>
                 </td>
 
@@ -274,7 +282,9 @@ const Dashboard = () => {
                   </div>
                 </td>
 
-                <td className="p-4 text-gray-500">{row.lastScan}</td>
+                <td className="p-4 text-gray-500 dark:text-gray-400">
+                  {row.lastScan}
+                </td>
               </tr>
             ))}
           </tbody>

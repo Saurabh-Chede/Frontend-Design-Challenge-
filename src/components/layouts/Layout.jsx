@@ -4,7 +4,7 @@ import Header from "./Header";
 
 const Layout = () => {
   return (
-    <div className="flex min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div className="flex min-h-screen bg-gray-100 dark:bg-gray-950 transition-colors duration-300">
       
       {/* Sidebar */}
       <Sidebar />
@@ -16,7 +16,7 @@ const Layout = () => {
         <Header />
 
         {/* Page Content */}
-        <main className="p-3 bg-white/25">
+        <main className="p-3 bg-white/25 dark:bg-gray-900/40 transition-colors duration-300">
           <Outlet />
         </main>
 
