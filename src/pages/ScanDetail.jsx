@@ -6,6 +6,7 @@ import {
   ClipboardCheck,
   FileText,
 } from "lucide-react";
+import logs from "../data/scanLogs.json";
 
 const ScanDetail = () => {
   const [activeTab, setActiveTab] = useState("activity");
@@ -48,10 +49,8 @@ const ScanDetail = () => {
 
   return (
     <div className="min-h-screen">
-      {/* ================= TOP SECTION ================= */}
       <div className="bg-white rounded-2xl shadow-sm p-8 mb-3">
         <div className="flex gap-12 items-center">
-          {/* LEFT PROGRESS CIRCLE */}
           <div className="w-28 h-28 rounded-full bg-gray-900 text-white flex flex-col items-center justify-center shrink-0">
             <h2 className="text-3xl font-bold text-teal-400">0%</h2>
             <p className="text-xs text-gray-300 mt-1">In Progress</p>
@@ -59,9 +58,7 @@ const ScanDetail = () => {
 
           {/* RIGHT SIDE */}
           <div className="flex-1 flex flex-col">
-            {/* Stepper */}
             <div className="relative flex justify-between items-center mb-8">
-              {/* Line */}
               <div className="absolute top-6 left-0 right-0 h-0.5 bg-gray-200"></div>
 
               {steps.map((step, i) => (
@@ -84,7 +81,6 @@ const ScanDetail = () => {
               ))}
             </div>
 
-            {/* Meta Info */}
             <div className="flex justify-between items-center border-t-2 border-t-gray-300 pt-6 text-sm">
               {[
                 { label: "Scan Type", value: "Grey Box" },
@@ -112,10 +108,7 @@ const ScanDetail = () => {
         </div>
       </div>
 
-      {/* ================= CONSOLE + FINDINGS ================= */}
-      {/* ================= CONSOLE SECTION ================= */}
       <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
-        {/* HEADER - FULL WIDTH */}
         <div className="flex justify-between items-center border-b border-gray-300 px-6 py-4">
           <div className="flex items-center gap-3 text-sm font-medium">
             <span className="w-2 h-2 bg-teal-500 rounded-full"></span>
@@ -127,9 +120,7 @@ const ScanDetail = () => {
           <span className="text-gray-400 cursor-pointer text-lg">×</span>
         </div>
 
-        {/* INNER GRID */}
         <div className="grid grid-cols-3">
-          {/* LEFT SIDE - span 2 */}
           <div className="col-span-2 border-r border-gray-300">
             {/* Tabs */}
             <div className="flex border-b border-gray-300 bg-gray-50 px-6">
@@ -166,14 +157,12 @@ const ScanDetail = () => {
             >
               {activeTab === "activity" && (
                 <>
-                  <p>[09:00:00] Starting penetration test...</p>
-                  <p>[09:01:00] Target online. Performing port scan...</p>
-                  <p>[09:02:00] Apache httpd 2.4.65 detected.</p>
-                  <p>[09:03:00] Testing credentials test:test</p>
-                  <p>[09:04:00] Exploring API endpoints...</p>
-                  <p className="text-red-500 font-semibold">
-                    [09:06:00] Possible IDOR vulnerability detected
-                  </p>
+                  {logs.map((log, index) => (
+                    <p key={index}>
+                      <span className="text-gray-400">[{log.time}]</span>{" "}
+                      <span className="text-black">{log.message}</span>
+                    </p>
+                  ))}
                 </>
               )}
 
@@ -198,31 +187,31 @@ const ScanDetail = () => {
 
             <div className="px-2 py-2 flex flex-col gap-2">
               {findings.map((item, i) => (
-              <div
-                key={i}
-                className="bg-white border border-gray-300 rounded-xl p-4"
-              >
-                <div className="flex justify-between items-center mb-2">
-                  <span
-                    className={`${item.color} text-white text-xs px-2 py-1 rounded-full`}
-                  >
-                    {item.severity}
-                  </span>
-                  <span className="text-xs text-gray-400">10:45:23</span>
+                <div
+                  key={i}
+                  className="bg-white border border-gray-300 rounded-xl p-4"
+                >
+                  <div className="flex justify-between items-center mb-2">
+                    <span
+                      className={`${item.color} text-white text-xs px-2 py-1 rounded-full`}
+                    >
+                      {item.severity}
+                    </span>
+                    <span className="text-xs text-gray-400">10:45:23</span>
+                  </div>
+
+                  <h3 className="font-semibold text-gray-800 text-sm">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-teal-600 text-xs mt-1">{item.endpoint}</p>
+
+                  <p className="text-xs text-gray-500 mt-2">
+                    Time-based vulnerability detected. Exploitation allows
+                    database-level access.
+                  </p>
                 </div>
-
-                <h3 className="font-semibold text-gray-800 text-sm">
-                  {item.title}
-                </h3>
-
-                <p className="text-teal-600 text-xs mt-1">{item.endpoint}</p>
-
-                <p className="text-xs text-gray-500 mt-2">
-                  Time-based vulnerability detected. Exploitation allows
-                  database-level access.
-                </p>
-              </div>
-            ))}
+              ))}
             </div>
           </div>
         </div>

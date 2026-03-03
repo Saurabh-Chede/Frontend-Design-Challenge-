@@ -1,0 +1,30 @@
+[
+  {
+    "time": "09:00:00",
+    "message": "I'll begin a systematic penetration test on helpdesk.democorp.com. Let me start with reconnaissance and enumeration"
+  },
+  {
+    "time": "09:01:00",
+    "message": "Good! Target is online. Performing port scanning to identify running services."
+  },
+  {
+    "time": "09:02:00",
+    "message": "Recon results - Apache httpd 2.4.65 detected on port 80 (web server). Probing structure."
+  },
+  {
+    "time": "09:03:00",
+    "message": "Found login page. Comment shows testing account (test:test). Testing credentials."
+  },
+  {
+    "time": "09:04:00",
+    "message": "POST method not allowed on /password/test. Checking JavaScript behavior."
+  },
+  {
+    "time": "09:05:00",
+    "message": "Exploring /api endpoints and testing credentials on other paths."
+  },
+  {
+    "time": "09:06:00",
+    "message": "Accessed dashboard using X-UserId header. Possible IDOR vulnerability detected."
+  }
+]
