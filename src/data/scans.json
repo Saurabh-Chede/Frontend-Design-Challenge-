@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Website Security Scan",
+    "status": "Completed",
+    "severity": "high",
+    "findings": ["SQL Injection", "XSS vulnerability"]
+  },
+  {
+    "id": 2,
+    "name": "API Vulnerability Scan",
+    "status": "Running",
+    "severity": "medium",
+    "findings": ["Broken Authentication"]
+  }
+]
